@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Salud Bucal - IPS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 30px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: white;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .intro-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .theme-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            animation: fadeIn 1s ease-out both;
+            cursor: pointer;
+        }
+
+        .theme-card:nth-child(1) { animation-delay: 0.4s; }
+        .theme-card:nth-child(2) { animation-delay: 0.5s; }
+        .theme-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .theme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .theme-card h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .theme-card ul {
+            list-style: none;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .theme-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .theme-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .resources-section {
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .resources-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.8em;
+        }
+
+        .resource-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .resource-info h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .resource-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85em;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 197, 94, 0.3));
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.5), rgba(34, 197, 94, 0.5));
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 5px 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="IPS Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size:2em;color:#667eea\'>🦷</div>'">
+            </div>
+            <div class="header-content">
+                <h1>Programa de Salud Bucal</h1>
+                <p class="subtitle">Dirección de Medicina Preventiva - IPS Paraguay</p>
+                <span class="badge">🛡️ Preventivo</span>
+                <span class="badge">🔄 Integral</span>
+            </div>
+        </header>
+
+        <div class="intro-section">
+            <h2>
+                <span style="font-size: 1.2em;">💙</span>
+                Nuestro Compromiso
+            </h2>
+            <p>
+                El Programa de Salud Bucal del Instituto de Previsión Social representa un pilar fundamental en el cuidado integral de nuestros asegurados. Con un enfoque <strong>preventivo e integral</strong>, trabajamos para garantizar que cada paraguayo tenga acceso a servicios odontológicos de calidad que no solo traten problemas existentes, sino que prevengan futuras complicaciones.
+            </p>
+            <p>
+                Entendemos que la salud bucal es inseparable de la salud general. Una boca sana es puerta a un corazón sano, a una mejor calidad de vida y al bienestar integral. Por eso, nuestro programa abarca desde la educación temprana en niños hasta el cuidado especializado en adultos mayores, pasando por programas específicos para embarazadas, diabéticos y pacientes oncológicos.
+            </p>
+            <p>
+                Contamos con profesionales altamente capacitados, infraestructura moderna y un compromiso inquebrantable con la prevención. Porque creemos que la mejor odontología es aquella que evita que los problemas aparezcan.
+            </p>
+        </div>
+
+        <div class="themes-grid">
+            <div class="theme-card">
+                <div class="theme-icon">👶👧🧒</div>
+                <h3>Prevención en Etapas de Vida</h3>
+                <ul>
+                    <li>Cuidado bucal infantil desde los primeros dientes</li>
+                    <li>Salud dental en adolescentes y jóvenes</li>
+                    <li>Mantenimiento preventivo en adultos</li>
+                    <li>Atención especializada para adultos mayores</li>
+                </ul>
+            </div>
+
+            <div class="theme-card">
+                <div class="theme-icon">⚕️🔬💊</div>
+                <h3>Servicios Integrales</h3>
+                <ul>
+                    <li>Odontología preventiva y educativa</li>
+                    <li>Tratamientos restauradores de calidad</li>
+                    <li>Atención a embarazadas y madres</li>
+                    <li>Programas para pacientes con diabetes</li>
+                    <li>Protocolos oncológicos especializados</li>
+                </ul>
+            </div>
+
+            <div class="theme-card">
+                <div class="theme-icon">🌍📊💚</div>
+                <h3>Impacto Comunitario</h3>
+                <ul>
+                    <li>Cobertura territorial amplia</li>
+                    <li>Charlas educativas en comunidades</li>
+                    <li>Campañas de concientización mensual</li>
+                    <li>Seguimiento y estadísticas de salud</li>
+                    <li>Alianzas para mejorar el acceso</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>
+                <span style="font-size: 1.2em;">📚</span>
+                Materiales Educativos
+            </h2>
+            <div class="resources-grid" id="resourcesGrid"></div>
+        </div>
+
+        <footer>
+            <p><strong>Dirección de Medicina Preventiva - IPS</strong></p>
+            <p>Comprometidos con tu salud bucal y bienestar integral</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 60 + 20;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Resources data
+        const resources = [
+            {
+                name: "Boca Sana, Corazón Sano",
+                file: "pdfs/boca-sana-corazon-sano.pdf",
+                icon: "❤️",
+                category: "Salud General"
+            },
+            {
+                name: "Charla para Adultos Mayores",
+                file: "pdfs/charla-adultos-mayores.pdf",
+                icon: "👴",
+                category: "Adultos Mayores"
+            },
+            {
+                name: "Noviembre: Diabetes y Salud Bucal",
+                file: "pdfs/noviembre-diabetes.pdf",
+                icon: "🩺",
+                category: "Diabetes"
+            },
+            {
+                name: "Octubre Rosa: Tratamiento Oncológico",
+                file: "pdfs/octubre-rosa-manifestaciones-orales-secundarias-al-tratamiento-oncologico-y-protocolos-odontologicos-de-actuacion-1-1.pdf",
+                icon: "🎗️",
+                category: "Oncología"
+            },
+            {
+                name: "Post: Diabetes IPS",
+                file: "pdfs/post-diabetes-ips.pdf",
+                icon: "📊",
+                category: "Información"
+            },
+            {
+                name: "Prevención en Adultos",
+                file: "pdfs/prevencion-adultos.pdf",
+                icon: "🛡️",
+                category: "Prevención"
+            },
+            {
+                name: "Prevención en Niños",
+                file: "pdfs/prevencion-ninos.pdf",
+                icon: "👦",
+                category: "Prevención Infantil"
+            },
+            {
+                name: "Salud Bucal en Embarazadas",
+                file: "pdfs/salud-bucal-en-la-embarazada.pdf",
+                icon: "🤰",
+                category: "Embarazo"
+            },
+            {
+                name: "Salud Bucodental: Ubicación",
+                file: "pdfs/salud-bucodental-en-adulto-mayor-ubicacion.pdf",
+                icon: "📍",
+                category: "Información"
+            },
+            {
+                name: "Salud Bucodental en Adultos Mayores",
+                file: "pdfs/salud-bucodental-en-adultos-mayores.pdf",
+                icon: "👵",
+                category: "Adultos Mayores"
+            },
+            {
+                name: "Tríptico Odonto-Adulto Mcal. López",
+                file: "pdfs/triptico-odontoadulto-mcal-lopez.pdf",
+                icon: "📄",
+                category: "Información Local"
+            }
+        ];
+
+        // Render resources
+        const resourcesGrid = document.getElementById('resourcesGrid');
+        resources.forEach((resource, index) => {
+            const card = document.createElement('div');
+            card.className = 'resource-card';
+            card.style.animation = `fadeIn 0.6s ease-out ${0.8 + index * 0.05}s both`;
+            
+            card.innerHTML = `
+                <div class="resource-icon">
+                    ${resource.icon}
+                </div>
+                <div class="resource-info">
+                    <h4>${resource.name}</h4>
+                    <p>${resource.category}</p>
+                </div>
+                <a href="${resource.file}" download="${resource.file}" class="download-btn" title="Descargar ${resource.name}">
+                    ⬇️
+                </a>
+            `;
+            
+            resourcesGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
