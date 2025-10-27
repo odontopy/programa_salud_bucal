@@ -513,6 +513,8 @@
             card.className = 'resource-card';
             card.style.animation = `fadeIn 0.6s ease-out ${0.8 + index * 0.05}s both`;
             
+            const fileName = resource.file.split('/').pop();
+            
             card.innerHTML = `
                 <div class="resource-icon">
                     ${resource.icon}
@@ -521,7 +523,7 @@
                     <h4>${resource.name}</h4>
                     <p>${resource.category}</p>
                 </div>
-                <a href="${resource.file}" download class="download-btn" title="Descargar ${resource.name}">
+                <a href="${resource.file}" target="_blank" class="download-btn" title="Descargar ${resource.name}">
                     ⬇️
                 </a>
             `;
