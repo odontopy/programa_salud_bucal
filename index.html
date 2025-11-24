@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Salud Bucal - IPS</title>
+    <title>Galería de Imágenes</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+
         * {
             margin: 0;
             padding: 0;
@@ -336,12 +355,102 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .category-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            text-transform: capitalize;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Modal para ver imagen en grande */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    
     <div class="container">
+
         <header>
             <div class="logo-container">
                 <img src="logo.png" alt="IPS Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size:2em;color:#667eea\'>🦷</div>'">
@@ -416,25 +525,220 @@
             <div class="resources-grid" id="resourcesGrid"></div>
         </div>
 
-        <footer>
+        <h1>📸 Galería de Imágenes</h1>
+
+        <!-- Apoyando Programas -->
+        <div class="category">
+            <h2 class="category-title">Apoyando Programas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-10 at 2.42.40 PM.jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-10 at 2.42.40 PM.jpeg" alt="Apoyando Programas 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM (1).jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM (1).jpeg" alt="Apoyando Programas 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM.jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM.jpeg" alt="Apoyando Programas 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (1).jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (1).jpeg" alt="Apoyando Programas 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (3).jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (3).jpeg" alt="Apoyando Programas 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM (1).jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM (1).jpeg" alt="Apoyando Programas 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM.jpeg')">
+                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM.jpeg" alt="Apoyando Programas 7">
+                </div>
+            </div>
+        </div>
+
+        <!-- Charla Capacitación -->
+        <div class="category">
+            <h2 class="category-title">Charla Capacitación</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.43 AM (2).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.43 AM (2).jpeg" alt="Charla 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.50 AM.jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.50 AM.jpeg" alt="Charla 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.51 AM.jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.51 AM.jpeg" alt="Charla 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.28 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.28 AM (1).jpeg" alt="Charla 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.46 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.46 AM (1).jpeg" alt="Charla 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.05 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.05 AM (1).jpeg" alt="Charla 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.11 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.11 AM (1).jpeg" alt="Charla 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.39 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.39 AM (1).jpeg" alt="Charla 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.02 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.02 AM (1).jpeg" alt="Charla 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.36 AM (1).jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.36 AM (1).jpeg" alt="Charla 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.45 AM.jpeg')">
+                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.45 AM.jpeg" alt="Charla 11">
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagen Empresa -->
+        <div class="category">
+            <h2 class="category-title">Imagen Empresa</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-10 at 2.41.45 PM.jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-10 at 2.41.45 PM.jpeg" alt="Empresa 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.39 AM.jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.39 AM.jpeg" alt="Empresa 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.43 AM.jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.43 AM.jpeg" alt="Empresa 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (1).jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (1).jpeg" alt="Empresa 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (2).jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (2).jpeg" alt="Empresa 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.48 AM.jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.48 AM.jpeg" alt="Empresa 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.49 AM (2).jpeg')">
+                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.49 AM (2).jpeg" alt="Empresa 7">
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagen Hospital -->
+        <div class="category">
+            <h2 class="category-title">Imagen Hospital</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-10 at 2.44.39 PM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-10 at 2.44.39 PM.jpeg" alt="Hospital 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.38 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.38 AM.jpeg" alt="Hospital 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (1).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (1).jpeg" alt="Hospital 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (2).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (2).jpeg" alt="Hospital 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM (2).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM (2).jpeg" alt="Hospital 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM.jpeg" alt="Hospital 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.45 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.45 AM.jpeg" alt="Hospital 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.46 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.46 AM.jpeg" alt="Hospital 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (1).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (1).jpeg" alt="Hospital 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (2).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (2).jpeg" alt="Hospital 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM.jpeg" alt="Hospital 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (3).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (3).jpeg" alt="Hospital 12">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (4).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (4).jpeg" alt="Hospital 13">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (5).jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (5).jpeg" alt="Hospital 14">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM.jpeg')">
+                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM.jpeg" alt="Hospital 15">
+                </div>
+            </div>
+        </div>
+
+        <!-- Imagen Salas -->
+        <div class="category">
+            <h2 class="category-title">Imagen Salas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/image_salas/1.jpg')">
+                    <img src="images/image_salas/1.jpg" alt="Sala 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/2.jpeg')">
+                    <img src="images/image_salas/2.jpeg" alt="Sala 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/3.jpeg')">
+                    <img src="images/image_salas/3.jpeg" alt="Sala 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/4.jpeg')">
+                    <img src="images/image_salas/4.jpeg" alt="Sala 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/5.jpeg')">
+                    <img src="images/image_salas/5.jpeg" alt="Sala 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/6.jpeg')">
+                    <img src="images/image_salas/6.jpeg" alt="Sala 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/7.jpeg')">
+                    <img src="images/image_salas/7.jpeg" alt="Sala 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.38.43 AM (1).jpeg')">
+                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.38.43 AM (1).jpeg" alt="Sala 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (1).jpeg')">
+                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (1).jpeg" alt="Sala 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (2).jpeg')">
+                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (2).jpeg" alt="Sala 10">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver imagen en grande -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <footer>
             <p><strong>Dpto. de Programas de Salud - Dirección de Medicina Preventiva - IPS de Medicina Preventiva - IPS</strong></p>
             <p>Comprometidos con tu salud bucal y bienestar integral</p>
         </footer>
-    </div>
-
+    
     <script>
-        // Create floating particles
+        // Create floating particles (solo si existe el contenedor)
         const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const size = Math.random() * 60 + 20;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particlesContainer.appendChild(particle);
+        if (particlesContainer) {
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 60 + 20;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
         }
 
         // Resources data
@@ -547,6 +851,24 @@
             `;
             
             resourcesGrid.appendChild(card);
+        });
+
+        function openModal(imgSrc) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>
