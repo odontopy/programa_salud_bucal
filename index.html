@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes</title>
+    <title>Programa de Salud Bucal - IPS</title>
     <style>
         * {
             margin: 0;
@@ -227,7 +227,7 @@
         }
 
         .theme-card li:before {
-            content: "✓";
+            content: "âœ“";
             position: absolute;
             left: 0;
             color: #4ade80;
@@ -446,6 +446,115 @@
         .close:hover {
             color: #667eea;
         }
+
+        /* Estilos del pie de página */
+        .site-footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            font-size: 2.5em;
+            line-height: 1;
+        }
+
+        .footer-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-sub {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-credits {
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .credit-line {
+            margin: 5px 0;
+        }
+
+        .footer-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .btn-materials {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-materials:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .footer-note {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-brand {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-logo {
+                margin-bottom: 10px;
+            }
+
+            .btn-materials {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -453,261 +562,393 @@
 
         <header>
             <div class="logo-container">
-                <img src="logo.png" alt="IPS Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size:2em;color:#667eea\'>🦷</div>'">
+                <img src="logo.png" alt="IPS Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size:2em;color:#667eea\'>ðŸ¦·</div>'">
             </div>
             <div class="header-content">
                 <h1>Programa de Salud Bucal</h1>
-                <p class="subtitle">Dpto. de Programas de Salud - Dirección de Medicina Preventiva - IPS</p>
-                <span class="badge">🛡️ Preventivo</span>
-                <span class="badge">🔄 Integral</span>
+                <p class="subtitle">Dpto. de Programas de Salud - DirecciÃ³n de Medicina Preventiva - IPS</p>
+                <span class="badge">ðŸ›¡ï¸ Preventivo</span>
+                <span class="badge">ðŸ”„ Integral</span>
             </div>
         </header>
 
         <div class="intro-section">
             <h2>
-                <span style="font-size: 1.2em;">💙</span>
+                <span style="font-size: 1.2em;">ðŸ’™</span>
                 Nuestro Compromiso
             </h2>
             <p>
-                El Programa de Salud Bucal del Instituto de Previsión Social representa un pilar fundamental en el cuidado integral de nuestros asegurados. Con un enfoque <strong>preventivo e integral</strong>, trabajamos para asegurar que cada persona acceda a información útil que contribuya a prevenir complicaciones en su salud bucal y general.
+                El Programa de Salud Bucal del Instituto de PrevisiÃ³n Social representa un pilar fundamental en el cuidado integral de nuestros asegurados. Con un enfoque <strong>preventivo e integral</strong>, trabajamos para asegurar que cada persona acceda a informaciÃ³n Ãºtil que contribuya a prevenir complicaciones en su salud bucal y general.
 
             </p>
             <p>
-                La salud bucal es un componente fundamental del bienestar integral. Nuestro programa contempla intervenciones preventivas para todas las etapas de la vida, con especial atención a grupos prioritarios como niños, adultos mayores, pacientes con enfermedades de base, embarazadas, personas con diabetes y pacientes oncológicos.
+                La salud bucal es un componente fundamental del bienestar integral. Nuestro programa contempla intervenciones preventivas para todas las etapas de la vida, con especial atenciÃ³n a grupos prioritarios como niÃ±os, adultos mayores, pacientes con enfermedades de base, embarazadas, personas con diabetes y pacientes oncolÃ³gicos.
             </p>
             <p>
-                Respaldados por profesionales altamente capacitados y una estrategia centrada en la prevención, sostenemos que la mejor odontología es la que actúa antes de que surjan complicaciones.
+                Respaldados por profesionales altamente capacitados y una estrategia centrada en la prevenciÃ³n, sostenemos que la mejor odontologÃ­a es la que actÃºa antes de que surjan complicaciones.
             </p>
         </div>
 
         <div class="themes-grid">
             <div class="theme-card">
-                <div class="theme-icon">👶👧🧒</div>
-                <h3>Prevención en Etapas de Vida</h3>
+                <div class="theme-icon">ðŸ‘¶ðŸ‘§ðŸ§’</div>
+                <h3>PrevenciÃ³n en Etapas de Vida</h3>
                 <ul>
                     <li>Cuidado bucal infantil desde los primeros dientes</li>
-                    <li>Salud dental en adolescentes y jóvenes</li>
+                    <li>Salud dental en adolescentes y jÃ³venes</li>
                     <li>Mantenimiento preventivo en adultos</li>
-                    <li>Atención especializada para adultos mayores</li>
+                    <li>AtenciÃ³n especializada para adultos mayores</li>
                 </ul>
             </div>
 
             <div class="theme-card">
-                <div class="theme-icon">⚕️🔬💊</div>
+                <div class="theme-icon">âš•ï¸ðŸ”¬ðŸ’Š</div>
                 <h3>Servicios Integrales</h3>
                 <ul>
-                    <li>Odontología preventiva y educativa</li>
-                    <li>Técnicas de higiene bucal</li>
-                    <li>Atención a embarazadas y madres</li>
+                    <li>OdontologÃ­a preventiva y educativa</li>
+                    <li>TÃ©cnicas de higiene bucal</li>
+                    <li>AtenciÃ³n a embarazadas y madres</li>
                     <li>Programas para pacientes con diabetes</li>
-                    <li>Protocolos oncológicos especializados</li>
-                    <li>Pacientes con cardiopatías</li>
+                    <li>Protocolos oncolÃ³gicos especializados</li>
+                    <li>Pacientes con cardiopatÃ­as</li>
                 </ul>
             </div>
 
             <div class="theme-card">
-                <div class="theme-icon">🌍📊💚</div>
+                <div class="theme-icon">ðŸŒðŸ“ŠðŸ’š</div>
                 <h3>Impacto Comunitario</h3>
                 <ul>
                     <li>Cobertura territorial amplia</li>
-                    <li>Charlas educativas en toda la red del Instituto de Previsión Social</li>
-                    <li>Campañas de concientización mensual</li>
-                    <li>Seguimiento y estadísticas de salud</li>
+                    <li>Charlas educativas en toda la red del Instituto de PrevisiÃ³n Social</li>
+                    <li>CampaÃ±as de concientizaciÃ³n mensual</li>
+                    <li>Seguimiento y estadÃ­sticas de salud</li>
                 </ul>
             </div>
         </div>
 
         <div class="resources-section">
             <h2>
-                <span style="font-size: 1.2em;">📚</span>
+                <span style="font-size: 1.2em;">ðŸ“š</span>
                 Materiales Educativos
             </h2>
             <div class="resources-grid" id="resourcesGrid"></div>
         </div>
 
-        <h1>📸 Galería de Imágenes</h1>
+        <h1>ðŸ“¸ GalerÃ­a de ImÃ¡genes</h1>
 
-        <!-- Apoyando Programas -->
+        <!-- Capacitaciones Jornadas -->
         <div class="category">
-            <h2 class="category-title">Apoyando Programas</h2>
+            <h2 class="category-title">Capacitaciones Jornadas</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-10 at 2.42.40 PM.jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-10 at 2.42.40 PM.jpeg" alt="Apoyando Programas 1">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones1.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones1.jpeg" alt="CapacitaciÃ³n 1">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM (1).jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM (1).jpeg" alt="Apoyando Programas 2">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones2.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones2.jpeg" alt="CapacitaciÃ³n 2">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM.jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.42 AM.jpeg" alt="Apoyando Programas 3">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones3.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones3.jpeg" alt="CapacitaciÃ³n 3">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (1).jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (1).jpeg" alt="Apoyando Programas 4">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones4.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones4.jpeg" alt="CapacitaciÃ³n 4">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (3).jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.45 AM (3).jpeg" alt="Apoyando Programas 5">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones5.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones5.jpeg" alt="CapacitaciÃ³n 5">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM (1).jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM (1).jpeg" alt="Apoyando Programas 6">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones6.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones6.jpeg" alt="CapacitaciÃ³n 6">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM.jpeg')">
-                    <img src="images/apoyando_programas/WhatsApp Image 2025-11-24 at 10.38.49 AM.jpeg" alt="Apoyando Programas 7">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones7.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones7.jpeg" alt="CapacitaciÃ³n 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones8.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones8.jpeg" alt="CapacitaciÃ³n 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones9.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones9.jpeg" alt="CapacitaciÃ³n 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones10.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones10.jpeg" alt="CapacitaciÃ³n 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones11.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones11.jpeg" alt="CapacitaciÃ³n 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones12.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones12.jpeg" alt="CapacitaciÃ³n 12">
                 </div>
             </div>
         </div>
 
-        <!-- Charla Capacitación -->
+        <!-- Maternidad -->
         <div class="category">
-            <h2 class="category-title">Charla Capacitación</h2>
+            <h2 class="category-title">Maternidad</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.43 AM (2).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.43 AM (2).jpeg" alt="Charla 1">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad1.jpeg')">
+                    <img src="images/maternidad/maternidad1.jpeg" alt="Maternidad 1">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.50 AM.jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.50 AM.jpeg" alt="Charla 2">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad2.jpeg')">
+                    <img src="images/maternidad/maternidad2.jpeg" alt="Maternidad 2">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.51 AM.jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 10.38.51 AM.jpeg" alt="Charla 3">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad3.jpeg')">
+                    <img src="images/maternidad/maternidad3.jpeg" alt="Maternidad 3">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.28 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.28 AM (1).jpeg" alt="Charla 4">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad4.jpeg')">
+                    <img src="images/maternidad/maternidad4.jpeg" alt="Maternidad 4">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.46 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.45.46 AM (1).jpeg" alt="Charla 5">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad5.jpeg')">
+                    <img src="images/maternidad/maternidad5.jpeg" alt="Maternidad 5">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.05 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.05 AM (1).jpeg" alt="Charla 6">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad6.jpeg')">
+                    <img src="images/maternidad/maternidad6.jpeg" alt="Maternidad 6">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.11 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.11 AM (1).jpeg" alt="Charla 7">
-                </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.39 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.46.39 AM (1).jpeg" alt="Charla 8">
-                </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.02 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.02 AM (1).jpeg" alt="Charla 9">
-                </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.36 AM (1).jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.36 AM (1).jpeg" alt="Charla 10">
-                </div>
-                <div class="gallery-item" onclick="openModal('images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.45 AM.jpeg')">
-                    <img src="images/charla_capacitacion/WhatsApp Image 2025-11-24 at 7.47.45 AM.jpeg" alt="Charla 11">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad7.jpeg')">
+                    <img src="images/maternidad/maternidad7.jpeg" alt="Maternidad 7">
                 </div>
             </div>
         </div>
 
-        <!-- Imagen Empresa -->
+        <!-- OdontopediatrÃ­a -->
         <div class="category">
-            <h2 class="category-title">Imagen Empresa</h2>
+            <h2 class="category-title">OdontopediatrÃ­a</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-10 at 2.41.45 PM.jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-10 at 2.41.45 PM.jpeg" alt="Empresa 1">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria1.jpeg')">
+                    <img src="images/odontopediatria/pediatria1.jpeg" alt="OdontopediatrÃ­a 1">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.39 AM.jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.39 AM.jpeg" alt="Empresa 2">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria2.jpeg')">
+                    <img src="images/odontopediatria/pediatria2.jpeg" alt="OdontopediatrÃ­a 2">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.43 AM.jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.43 AM.jpeg" alt="Empresa 3">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria3.jpeg')">
+                    <img src="images/odontopediatria/pediatria3.jpeg" alt="OdontopediatrÃ­a 3">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (1).jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (1).jpeg" alt="Empresa 4">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria4.jpeg')">
+                    <img src="images/odontopediatria/pediatria4.jpeg" alt="OdontopediatrÃ­a 4">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (2).jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.46 AM (2).jpeg" alt="Empresa 5">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria5.jpeg')">
+                    <img src="images/odontopediatria/pediatria5.jpeg" alt="OdontopediatrÃ­a 5">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.48 AM.jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.48 AM.jpeg" alt="Empresa 6">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria6.jpeg')">
+                    <img src="images/odontopediatria/pediatria6.jpeg" alt="OdontopediatrÃ­a 6">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.49 AM (2).jpeg')">
-                    <img src="images/image_empresa/WhatsApp Image 2025-11-24 at 10.38.49 AM (2).jpeg" alt="Empresa 7">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria7.jpeg')">
+                    <img src="images/odontopediatria/pediatria7.jpeg" alt="OdontopediatrÃ­a 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria8.jpeg')">
+                    <img src="images/odontopediatria/pediatria8.jpeg" alt="OdontopediatrÃ­a 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria9.jpeg')">
+                    <img src="images/odontopediatria/pediatria9.jpeg" alt="OdontopediatrÃ­a 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria10.jpeg')">
+                    <img src="images/odontopediatria/pediatria10.jpeg" alt="OdontopediatrÃ­a 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria11.jpeg')">
+                    <img src="images/odontopediatria/pediatria11.jpeg" alt="OdontopediatrÃ­a 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria12.jpeg')">
+                    <img src="images/odontopediatria/pediatria12.jpeg" alt="OdontopediatrÃ­a 12">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria13.jpeg')">
+                    <img src="images/odontopediatria/pediatria13.jpeg" alt="OdontopediatrÃ­a 13">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria14.jpeg')">
+                    <img src="images/odontopediatria/pediatria14.jpeg" alt="OdontopediatrÃ­a 14">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria15.jpeg')">
+                    <img src="images/odontopediatria/pediatria15.jpeg" alt="OdontopediatrÃ­a 15">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria16.jpeg')">
+                    <img src="images/odontopediatria/pediatria16.jpeg" alt="OdontopediatrÃ­a 16">
                 </div>
             </div>
         </div>
 
-        <!-- Imagen Hospital -->
+        <!-- Pacientes Internados -->
         <div class="category">
-            <h2 class="category-title">Imagen Hospital</h2>
+            <h2 class="category-title">Pacientes Internados</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-10 at 2.44.39 PM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-10 at 2.44.39 PM.jpeg" alt="Hospital 1">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala1.jpeg')">
+                    <img src="images/sala_internados/sala1.jpeg" alt="Sala 1">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.38 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.38 AM.jpeg" alt="Hospital 2">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala2.jpeg')">
+                    <img src="images/sala_internados/sala2.jpeg" alt="Sala 2">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (1).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (1).jpeg" alt="Hospital 3">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala3.jpeg')">
+                    <img src="images/sala_internados/sala3.jpeg" alt="Sala 3">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (2).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.41 AM (2).jpeg" alt="Hospital 4">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala4.jpeg')">
+                    <img src="images/sala_internados/sala4.jpeg" alt="Sala 4">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM (2).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM (2).jpeg" alt="Hospital 5">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala5.jpeg')">
+                    <img src="images/sala_internados/sala5.jpeg" alt="Sala 5">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.44 AM.jpeg" alt="Hospital 6">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala6.jpeg')">
+                    <img src="images/sala_internados/sala6.jpeg" alt="Sala 6">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.45 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.45 AM.jpeg" alt="Hospital 7">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala7.jpeg')">
+                    <img src="images/sala_internados/sala7.jpeg" alt="Sala 7">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.46 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.46 AM.jpeg" alt="Hospital 8">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala8.jpeg')">
+                    <img src="images/sala_internados/sala8.jpeg" alt="Sala 8">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (1).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (1).jpeg" alt="Hospital 9">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala9.jpeg')">
+                    <img src="images/sala_internados/sala9.jpeg" alt="Sala 9">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (2).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM (2).jpeg" alt="Hospital 10">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala10.jpeg')">
+                    <img src="images/sala_internados/sala10.jpeg" alt="Sala 10">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.38.47 AM.jpeg" alt="Hospital 11">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala11.jpeg')">
+                    <img src="images/sala_internados/sala11.jpeg" alt="Sala 11">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (3).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (3).jpeg" alt="Hospital 12">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala12.jpeg')">
+                    <img src="images/sala_internados/sala12.jpeg" alt="Sala 12">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (4).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (4).jpeg" alt="Hospital 13">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala13.jpeg')">
+                    <img src="images/sala_internados/sala13.jpeg" alt="Sala 13">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (5).jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM (5).jpeg" alt="Hospital 14">
-                </div>
-                <div class="gallery-item" onclick="openModal('images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM.jpeg')">
-                    <img src="images/image_hospi/WhatsApp Image 2025-11-24 at 10.57.50 AM.jpeg" alt="Hospital 15">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala14.jpeg')">
+                    <img src="images/sala_internados/sala14.jpeg" alt="Sala 14">
                 </div>
             </div>
         </div>
 
-        <!-- Imagen Salas -->
+        <!-- PrevenciÃ³n BÃºsqueda Activa -->
         <div class="category">
-            <h2 class="category-title">Imagen Salas</h2>
+            <h2 class="category-title">Previbus</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/image_salas/1.jpg')">
-                    <img src="images/image_salas/1.jpg" alt="Sala 1">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv1.jpeg')">
+                    <img src="images/previ_bus/pv1.jpeg" alt="PrevenciÃ³n 1">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/2.jpeg')">
-                    <img src="images/image_salas/2.jpeg" alt="Sala 2">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv2.jpeg')">
+                    <img src="images/previ_bus/pv2.jpeg" alt="PrevenciÃ³n 2">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/3.jpeg')">
-                    <img src="images/image_salas/3.jpeg" alt="Sala 3">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv3.jpeg')">
+                    <img src="images/previ_bus/pv3.jpeg" alt="PrevenciÃ³n 3">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/4.jpeg')">
-                    <img src="images/image_salas/4.jpeg" alt="Sala 4">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv4.jpeg')">
+                    <img src="images/previ_bus/pv4.jpeg" alt="PrevenciÃ³n 4">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/5.jpeg')">
-                    <img src="images/image_salas/5.jpeg" alt="Sala 5">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv5.jpeg')">
+                    <img src="images/previ_bus/pv5.jpeg" alt="PrevenciÃ³n 5">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/6.jpeg')">
-                    <img src="images/image_salas/6.jpeg" alt="Sala 6">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv6.jpeg')">
+                    <img src="images/previ_bus/pv6.jpeg" alt="PrevenciÃ³n 6">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/7.jpeg')">
-                    <img src="images/image_salas/7.jpeg" alt="Sala 7">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv7.jpeg')">
+                    <img src="images/previ_bus/pv7.jpeg" alt="PrevenciÃ³n 7">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.38.43 AM (1).jpeg')">
-                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.38.43 AM (1).jpeg" alt="Sala 8">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv8.jpeg')">
+                    <img src="images/previ_bus/pv8.jpeg" alt="PrevenciÃ³n 8">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (1).jpeg')">
-                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (1).jpeg" alt="Sala 9">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv9.jpeg')">
+                    <img src="images/previ_bus/pv9.jpeg" alt="PrevenciÃ³n 9">
                 </div>
-                <div class="gallery-item" onclick="openModal('images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (2).jpeg')">
-                    <img src="images/image_salas/WhatsApp Image 2025-11-24 at 10.57.50 AM (2).jpeg" alt="Sala 10">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv10.jpeg')">
+                    <img src="images/previ_bus/pv10.jpeg" alt="PrevenciÃ³n 10">
+                </div>
+            </div>
+        </div>
+
+        <!-- Salas de Espera -->
+        <div class="category">
+            <h2 class="category-title">Charlas Educativas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera1.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera1.jpeg" alt="Sala 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera2.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera2.jpeg" alt="Sala 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera3.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera3.jpeg" alt="Sala 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera4.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera4.jpeg" alt="Sala 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera5.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera5.jpeg" alt="Sala 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera6.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera6.jpeg" alt="Sala 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera7.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera7.jpeg" alt="Sala 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera8.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera8.jpeg" alt="Sala 8">
+                </div>
+            </div>
+        </div>
+
+        <!-- Salud Integral -->
+        <div class="category">
+            <h2 class="category-title">Salud Integral</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral1.jpeg')">
+                    <img src="images/salud_integral/salud_integral1.jpeg" alt="Salud Integral 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral2.jpeg')">
+                    <img src="images/salud_integral/salud_integral2.jpeg" alt="Salud Integral 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral3.jpeg')">
+                    <img src="images/salud_integral/salud_integral3.jpeg" alt="Salud Integral 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral4.jpeg')">
+                    <img src="images/salud_integral/salud_integral4.jpeg" alt="Salud Integral 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral5.jpeg')">
+                    <img src="images/salud_integral/salud_integral5.jpeg" alt="Salud Integral 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral6.jpeg')">
+                    <img src="images/salud_integral/salud_integral6.jpeg" alt="Salud Integral 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral7.jpeg')">
+                    <img src="images/salud_integral/salud_integral7.jpeg" alt="Salud Integral 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral8.jpeg')">
+                    <img src="images/salud_integral/salud_integral8.jpeg" alt="Salud Integral 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral9.jpeg')">
+                    <img src="images/salud_integral/salud_integral9.jpeg" alt="Salud Integral 9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vida Plena -->
+        <div class="category">
+            <h2 class="category-title">Vida Plena</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena1.jpeg')">
+                    <img src="images/vida_plena/vida_plena1.jpeg" alt="Vida Plena 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena2.jpeg')">
+                    <img src="images/vida_plena/vida_plena2.jpeg" alt="Vida Plena 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena3.jpeg')">
+                    <img src="images/vida_plena/vida_plena3.jpeg" alt="Vida Plena 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena4.jpeg')">
+                    <img src="images/vida_plena/vida_plena4.jpeg" alt="Vida Plena 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena5.jpeg')">
+                    <img src="images/vida_plena/vida_plena5.jpeg" alt="Vida Plena 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena6.jpeg')">
+                    <img src="images/vida_plena/vida_plena6.jpeg" alt="Vida Plena 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena7.jpeg')">
+                    <img src="images/vida_plena/vida_plena7.jpeg" alt="Vida Plena 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena8.jpeg')">
+                    <img src="images/vida_plena/vida_plena8.jpeg" alt="Vida Plena 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena9.jpeg')">
+                    <img src="images/vida_plena/vida_plena9.jpeg" alt="Vida Plena 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena10.jpeg')">
+                    <img src="images/vida_plena/vida_plena10.jpeg" alt="Vida Plena 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena11.jpeg')">
+                    <img src="images/vida_plena/vida_plena11.jpeg" alt="Vida Plena 11">
                 </div>
             </div>
         </div>
@@ -719,10 +960,32 @@
         <img class="modal-content" id="img01">
     </div>
 
-    <footer>
-            <p><strong>Dpto. de Programas de Salud - Dirección de Medicina Preventiva - IPS de Medicina Preventiva - IPS</strong></p>
-            <p>Comprometidos con tu salud bucal y bienestar integral</p>
-        </footer>
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo" aria-hidden="true">🦷</div>
+      <div>
+        <div class="footer-title">Programa de Salud Bucal — IPS</div>
+        <div class="footer-sub">Dpto. de Programas de Salud · Dirección de Medicina Preventiva</div>
+      </div>
+    </div>
+
+    <div class="footer-credits" role="contentinfo" aria-label="Créditos">
+      <p class="credit-line"><strong>Autora:</strong> Dra. Diana Rocio Orué</p>
+      <p class="credit-line"><strong>Diseño web:</strong> Lic. Julio Franco</p>
+      <p class="small-muted">© <span id="year-footer">2025</span> — Todos los derechos reservados</p>
+    </div>
+
+    <div class="footer-actions">
+      <a class="btn-materials" href="pdfs/Boca_sana_Corazon_sano.pdf" target="_blank" rel="noopener">Ver materiales</a>
+      <div class="footer-note">Comprometidos con tu salud bucal y bienestar integral</div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>Diseño accesible · Preferencias de impresión disponibles</small>
+  </div>
+</footer>
     
     <script>
         // Create floating particles (solo si existe el contenedor)
@@ -744,87 +1007,87 @@
         // Resources data
         const resources = [
             {
-                name: "Boca Sana, Corazón Sano",
+                name: "Boca Sana, CorazÃ³n Sano",
                 file: "pdfs/Boca_sana_Corazon_sano.pdf",
-                icon: "❤️",
+                icon: "â¤ï¸",
                 category: "Salud General"
             },
             {
-                name: "Noviembre Azul: Cáncer de Próstata",
+                name: "Noviembre Azul: CÃ¡ncer de PrÃ³stata",
                 file: "pdfs/Post para Instagram Noviembre Azul Cancer de Prostata.pdf",
-                icon: "💙",
-                category: "Campañas"
+                icon: "ðŸ’™",
+                category: "CampaÃ±as"
             },
             {
                 name: "Charla para Adultos Mayores",
                 file: "pdfs/charla adultos mayores.pdf",
-                icon: "👴",
+                icon: "ðŸ‘´",
                 category: "Adultos Mayores"
             },
             {
                 name: "Noviembre: Diabetes y Salud Bucal",
                 file: "pdfs/noviembre DIABETES.pdf",
-                icon: "🩺",
+                icon: "ðŸ©º",
                 category: "Diabetes"
             },
             {
-                name: "Octubre Rosa: Tratamiento Oncológico",
+                name: "Octubre Rosa: Tratamiento OncolÃ³gico",
                 file: "pdfs/octubre_rosa.pdf",
-                icon: "🎗️",
-                category: "Oncología"
+                icon: "ðŸŽ—ï¸",
+                category: "OncologÃ­a"
             },
             {
                 name: "Diabetes IPS",
                 file: "pdfs/diabetes.pdf",
-                icon: "📊",
-                category: "Información"
+                icon: "ðŸ“Š",
+                category: "InformaciÃ³n"
             },
             {
-                name: "Prevención en Adultos",
+                name: "PrevenciÃ³n en Adultos",
                 file: "pdfs/prevencion_adultos.pdf",
-                icon: "🛡️",
-                category: "Prevención"
+                icon: "ðŸ›¡ï¸",
+                category: "PrevenciÃ³n"
             },
             {
-                name: "Prevención en Niños",
+                name: "PrevenciÃ³n en NiÃ±os",
                 file: "pdfs/prevencion_ninhos.pdf",
-                icon: "👦",
-                category: "Prevención Infantil"
+                icon: "ðŸ‘¦",
+                category: "PrevenciÃ³n Infantil"
             },
             {
                 name: "Salud Bucal en Embarazadas",
                 file: "pdfs/salud bucal en la embarazada.pdf",
-                icon: "🤰",
+                icon: "ðŸ¤°",
                 category: "Embarazo"
             },
             {
                 name: "Lactancia Materna",
                 file: "pdfs/Lactancia materna.pdf",
-                icon: "🍼",
+                icon: "ðŸ¼",
                 category: "Maternidad"
             },
             {
-                name: "Salud Bucodental: Ubicación",
+                name: "Salud Bucodental: UbicaciÃ³n",
                 file: "pdfs/salud bucodental en adulto mayor-ubicacion.pdf",
-                icon: "📍",
-                category: "Información"
+                icon: "ðŸ“",
+                category: "InformaciÃ³n"
             },
             {
                 name: "Salud Bucodental en Adultos Mayores",
                 file: "pdfs/Salud Bucodental en Adultos Mayores.pdf",
-                icon: "👵",
+                icon: "ðŸ‘µ",
                 category: "Adultos Mayores"
             },
             {
-                name: "Tríptico Odonto-Adulto Mcal. López",
+                name: "TrÃ­ptico Odonto-Adulto Mcal. LÃ³pez",
                 file: "pdfs/triptico odontoadulto mcal lopez.pdf",
-                icon: "📄",
-                category: "Información Local"
+                icon: "ðŸ“„",
+                category: "InformaciÃ³n Local"
             },{
-                name: "Cáncer Oral: Prevención y Cuidado",
+                name: "CÃ¡ncer Oral: PrevenciÃ³n y Cuidado",
                 file: "pdfs/cancer_oral.pdf",
-                icon: "👄",
-                category: "Oncología"
+                icon: "ðŸ‘„",
+                category: "OncologÃ­a"
             },
         ];
 
@@ -846,7 +1109,7 @@
                     <p>${resource.category}</p>
                 </div>
                 <a href="${resource.file}" target="_blank" class="download-btn" title="Descargar ${resource.name}">
-                    ⬇️
+                    â¬‡ï¸
                 </a>
             `;
             
@@ -860,6 +1123,8 @@
             modalImg.src = imgSrc;
         }
 
+
+
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
@@ -868,8 +1133,56 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+
             }
         });
+
+        // FunciÃ³n para cargar imÃ¡genes dinÃ¡micamente por carpeta
+        function loadGalleryFolder(foldername, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            fetch(`images/${foldername}/`)
+                .then(res => res.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    // Busca links a imÃ¡genes (formato puede variar segÃºn servidor)
+                    const links = Array.from(doc.querySelectorAll('a')).filter(a => 
+                        /\.(jpg|jpeg|png|gif|webp)$/i.test(a.href)
+                    );
+                    
+                    if (links.length === 0) {
+                        container.innerHTML = '<p style="color:rgba(255,255,255,0.6);">No hay imÃ¡genes en esta carpeta</p>';
+                        return;
+                                       }
+
+                    links.forEach(link => {
+                        const filename = link.textContent.trim();
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        const imageSrc = encodeURI(`images/${foldername}/${filename}`);
+                        item.innerHTML = `<img src="${imageSrc}" alt="${filename}" onerror="this.parentElement.style.display='none'">`;
+                        item.onclick = () => openModal(imageSrc);
+                        container.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    console.warn(`No se pudo cargar carpeta ${foldername}:`, err);
+                    container.innerHTML = '<p style="color:rgba(255,255,255,0.6);">Error al cargar imÃ¡genes</p>';
+                });
+        }
+
+        // Cargar todas las nuevas carpetas
+        loadGalleryFolder('backup', 'backup-gallery');
+        loadGalleryFolder('capacitaciones_jornadas', 'capacitaciones-gallery');
+        loadGalleryFolder('maternidad', 'maternidad-gallery');
+        loadGalleryFolder('odontopediatria', 'odontopediatria-gallery');
+        loadGalleryFolder('pacientes_internados', 'pacientes-gallery');
+        loadGalleryFolder('previ_bus', 'previ-gallery');
+        loadGalleryFolder('salas_de_epera', 'salas-espera-gallery');
+        loadGalleryFolder('salud_integral', 'salud-integral-gallery');
+        loadGalleryFolder('vida_plena', 'vida-plena-gallery');
     </script>
 </body>
 </html>
