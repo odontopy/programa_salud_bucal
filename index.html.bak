@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Salud Bucal - IPS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 30px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: white;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .intro-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .theme-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            animation: fadeIn 1s ease-out both;
+            cursor: pointer;
+        }
+
+        .theme-card:nth-child(1) { animation-delay: 0.4s; }
+        .theme-card:nth-child(2) { animation-delay: 0.5s; }
+        .theme-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .theme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .theme-card h3 {
+            color: white;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .theme-card ul {
+            list-style: none;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .theme-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .theme-card li:before {
+            content: "âœ“";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .resources-section {
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .resources-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.8em;
+        }
+
+        .resource-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .resource-info h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .resource-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85em;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 197, 94, 0.3));
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.5), rgba(34, 197, 94, 0.5));
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 5px 20px rgba(74, 222, 128, 0.3);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .category-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            text-transform: capitalize;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Modal para ver imagen en grande */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        /* Estilos del pie de página */
+        .site-footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            font-size: 2.5em;
+            line-height: 1;
+        }
+
+        .footer-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .footer-sub {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-credits {
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .credit-line {
+            margin: 5px 0;
+        }
+
+        .footer-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .btn-materials {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-materials:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .footer-note {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-brand {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-logo {
+                margin-bottom: 10px;
+            }
+
+            .btn-materials {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="IPS Logo" onerror="this.parentElement.innerHTML='<div style=\'font-size:2em;color:#667eea\'>ðŸ¦·</div>'">
+            </div>
+            <div class="header-content">
+                <h1>Programa de Salud Bucal</h1>
+                <p class="subtitle">Dpto. de Programas de Salud - DirecciÃ³n de Medicina Preventiva - IPS</p>
+                <span class="badge">ðŸ›¡ï¸ Preventivo</span>
+                <span class="badge">ðŸ”„ Integral</span>
+            </div>
+        </header>
+
+        <div class="intro-section">
+            <h2>
+                <span style="font-size: 1.2em;">ðŸ’™</span>
+                Nuestro Compromiso
+            </h2>
+            <p>
+                El Programa de Salud Bucal del Instituto de PrevisiÃ³n Social representa un pilar fundamental en el cuidado integral de nuestros asegurados. Con un enfoque <strong>preventivo e integral</strong>, trabajamos para asegurar que cada persona acceda a informaciÃ³n Ãºtil que contribuya a prevenir complicaciones en su salud bucal y general.
+
+            </p>
+            <p>
+                La salud bucal es un componente fundamental del bienestar integral. Nuestro programa contempla intervenciones preventivas para todas las etapas de la vida, con especial atenciÃ³n a grupos prioritarios como niÃ±os, adultos mayores, pacientes con enfermedades de base, embarazadas, personas con diabetes y pacientes oncolÃ³gicos.
+            </p>
+            <p>
+                Respaldados por profesionales altamente capacitados y una estrategia centrada en la prevenciÃ³n, sostenemos que la mejor odontologÃ­a es la que actÃºa antes de que surjan complicaciones.
+            </p>
+        </div>
+
+        <div class="themes-grid">
+            <div class="theme-card">
+                <div class="theme-icon">ðŸ‘¶ðŸ‘§ðŸ§’</div>
+                <h3>PrevenciÃ³n en Etapas de Vida</h3>
+                <ul>
+                    <li>Cuidado bucal infantil desde los primeros dientes</li>
+                    <li>Salud dental en adolescentes y jÃ³venes</li>
+                    <li>Mantenimiento preventivo en adultos</li>
+                    <li>AtenciÃ³n especializada para adultos mayores</li>
+                </ul>
+            </div>
+
+            <div class="theme-card">
+                <div class="theme-icon">âš•ï¸ðŸ”¬ðŸ’Š</div>
+                <h3>Servicios Integrales</h3>
+                <ul>
+                    <li>OdontologÃ­a preventiva y educativa</li>
+                    <li>TÃ©cnicas de higiene bucal</li>
+                    <li>AtenciÃ³n a embarazadas y madres</li>
+                    <li>Programas para pacientes con diabetes</li>
+                    <li>Protocolos oncolÃ³gicos especializados</li>
+                    <li>Pacientes con cardiopatÃ­as</li>
+                </ul>
+            </div>
+
+            <div class="theme-card">
+                <div class="theme-icon">ðŸŒðŸ“ŠðŸ’š</div>
+                <h3>Impacto Comunitario</h3>
+                <ul>
+                    <li>Cobertura territorial amplia</li>
+                    <li>Charlas educativas en toda la red del Instituto de PrevisiÃ³n Social</li>
+                    <li>CampaÃ±as de concientizaciÃ³n mensual</li>
+                    <li>Seguimiento y estadÃ­sticas de salud</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resources-section">
+            <h2>
+                <span style="font-size: 1.2em;">ðŸ“š</span>
+                Materiales Educativos
+            </h2>
+            <div class="resources-grid" id="resourcesGrid"></div>
+        </div>
+
+        <h1>ðŸ“¸ GalerÃ­a de ImÃ¡genes</h1>
+
+        <!-- Capacitaciones Jornadas -->
+        <div class="category">
+            <h2 class="category-title">Capacitaciones Jornadas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones1.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones1.jpeg" alt="CapacitaciÃ³n 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones2.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones2.jpeg" alt="CapacitaciÃ³n 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones3.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones3.jpeg" alt="CapacitaciÃ³n 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones4.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones4.jpeg" alt="CapacitaciÃ³n 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones5.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones5.jpeg" alt="CapacitaciÃ³n 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones6.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones6.jpeg" alt="CapacitaciÃ³n 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones7.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones7.jpeg" alt="CapacitaciÃ³n 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones8.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones8.jpeg" alt="CapacitaciÃ³n 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones9.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones9.jpeg" alt="CapacitaciÃ³n 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones10.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones10.jpeg" alt="CapacitaciÃ³n 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones11.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones11.jpeg" alt="CapacitaciÃ³n 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/capacitaciones_jornadas/capacitaciones12.jpeg')">
+                    <img src="images/capacitaciones_jornadas/capacitaciones12.jpeg" alt="CapacitaciÃ³n 12">
+                </div>
+            </div>
+        </div>
+
+        <!-- Maternidad -->
+        <div class="category">
+            <h2 class="category-title">Maternidad</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad1.jpeg')">
+                    <img src="images/maternidad/maternidad1.jpeg" alt="Maternidad 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad2.jpeg')">
+                    <img src="images/maternidad/maternidad2.jpeg" alt="Maternidad 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad3.jpeg')">
+                    <img src="images/maternidad/maternidad3.jpeg" alt="Maternidad 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad4.jpeg')">
+                    <img src="images/maternidad/maternidad4.jpeg" alt="Maternidad 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad5.jpeg')">
+                    <img src="images/maternidad/maternidad5.jpeg" alt="Maternidad 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad6.jpeg')">
+                    <img src="images/maternidad/maternidad6.jpeg" alt="Maternidad 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/maternidad/maternidad7.jpeg')">
+                    <img src="images/maternidad/maternidad7.jpeg" alt="Maternidad 7">
+                </div>
+            </div>
+        </div>
+
+        <!-- OdontopediatrÃ­a -->
+        <div class="category">
+            <h2 class="category-title">Odontopediatrí­a</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria1.jpeg')">
+                    <img src="images/odontopediatria/pediatria1.jpeg" alt="OdontopediatrÃ­a 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria2.jpeg')">
+                    <img src="images/odontopediatria/pediatria2.jpeg" alt="OdontopediatrÃ­a 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria3.jpeg')">
+                    <img src="images/odontopediatria/pediatria3.jpeg" alt="OdontopediatrÃ­a 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria4.jpeg')">
+                    <img src="images/odontopediatria/pediatria4.jpeg" alt="OdontopediatrÃ­a 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria5.jpeg')">
+                    <img src="images/odontopediatria/pediatria5.jpeg" alt="OdontopediatrÃ­a 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria6.jpeg')">
+                    <img src="images/odontopediatria/pediatria6.jpeg" alt="OdontopediatrÃ­a 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria7.jpeg')">
+                    <img src="images/odontopediatria/pediatria7.jpeg" alt="OdontopediatrÃ­a 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria8.jpeg')">
+                    <img src="images/odontopediatria/pediatria8.jpeg" alt="OdontopediatrÃ­a 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria9.jpeg')">
+                    <img src="images/odontopediatria/pediatria9.jpeg" alt="OdontopediatrÃ­a 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria10.jpeg')">
+                    <img src="images/odontopediatria/pediatria10.jpeg" alt="OdontopediatrÃ­a 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria11.jpeg')">
+                    <img src="images/odontopediatria/pediatria11.jpeg" alt="OdontopediatrÃ­a 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria12.jpeg')">
+                    <img src="images/odontopediatria/pediatria12.jpeg" alt="OdontopediatrÃ­a 12">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria13.jpeg')">
+                    <img src="images/odontopediatria/pediatria13.jpeg" alt="OdontopediatrÃ­a 13">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria14.jpeg')">
+                    <img src="images/odontopediatria/pediatria14.jpeg" alt="OdontopediatrÃ­a 14">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria15.jpeg')">
+                    <img src="images/odontopediatria/pediatria15.jpeg" alt="OdontopediatrÃ­a 15">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/odontopediatria/pediatria16.jpeg')">
+                    <img src="images/odontopediatria/pediatria16.jpeg" alt="OdontopediatrÃ­a 16">
+                </div>
+            </div>
+        </div>
+
+        <!-- Pacientes Internados -->
+        <div class="category">
+            <h2 class="category-title">Pacientes Internados</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala1.jpeg')">
+                    <img src="images/sala_internados/sala1.jpeg" alt="Sala 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala2.jpeg')">
+                    <img src="images/sala_internados/sala2.jpeg" alt="Sala 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala3.jpeg')">
+                    <img src="images/sala_internados/sala3.jpeg" alt="Sala 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala4.jpeg')">
+                    <img src="images/sala_internados/sala4.jpeg" alt="Sala 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala5.jpeg')">
+                    <img src="images/sala_internados/sala5.jpeg" alt="Sala 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala6.jpeg')">
+                    <img src="images/sala_internados/sala6.jpeg" alt="Sala 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala7.jpeg')">
+                    <img src="images/sala_internados/sala7.jpeg" alt="Sala 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala8.jpeg')">
+                    <img src="images/sala_internados/sala8.jpeg" alt="Sala 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala9.jpeg')">
+                    <img src="images/sala_internados/sala9.jpeg" alt="Sala 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala10.jpeg')">
+                    <img src="images/sala_internados/sala10.jpeg" alt="Sala 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala11.jpeg')">
+                    <img src="images/sala_internados/sala11.jpeg" alt="Sala 11">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala12.jpeg')">
+                    <img src="images/sala_internados/sala12.jpeg" alt="Sala 12">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala13.jpeg')">
+                    <img src="images/sala_internados/sala13.jpeg" alt="Sala 13">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/sala_internados/sala14.jpeg')">
+                    <img src="images/sala_internados/sala14.jpeg" alt="Sala 14">
+                </div>
+            </div>
+        </div>
+
+        <!-- PrevenciÃ³n BÃºsqueda Activa -->
+        <div class="category">
+            <h2 class="category-title">Previbus</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv1.jpeg')">
+                    <img src="images/previ_bus/pv1.jpeg" alt="PrevenciÃ³n 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv2.jpeg')">
+                    <img src="images/previ_bus/pv2.jpeg" alt="PrevenciÃ³n 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv3.jpeg')">
+                    <img src="images/previ_bus/pv3.jpeg" alt="PrevenciÃ³n 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv4.jpeg')">
+                    <img src="images/previ_bus/pv4.jpeg" alt="PrevenciÃ³n 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv5.jpeg')">
+                    <img src="images/previ_bus/pv5.jpeg" alt="PrevenciÃ³n 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv6.jpeg')">
+                    <img src="images/previ_bus/pv6.jpeg" alt="PrevenciÃ³n 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv7.jpeg')">
+                    <img src="images/previ_bus/pv7.jpeg" alt="PrevenciÃ³n 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv8.jpeg')">
+                    <img src="images/previ_bus/pv8.jpeg" alt="PrevenciÃ³n 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv9.jpeg')">
+                    <img src="images/previ_bus/pv9.jpeg" alt="PrevenciÃ³n 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/previ_bus/pv10.jpeg')">
+                    <img src="images/previ_bus/pv10.jpeg" alt="PrevenciÃ³n 10">
+                </div>
+            </div>
+        </div>
+
+        <!-- Salas de Espera -->
+        <div class="category">
+            <h2 class="category-title">Charlas Educativas</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera1.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera1.jpeg" alt="Sala 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera2.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera2.jpeg" alt="Sala 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera3.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera3.jpeg" alt="Sala 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera4.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera4.jpeg" alt="Sala 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera5.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera5.jpeg" alt="Sala 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera6.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera6.jpeg" alt="Sala 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera7.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera7.jpeg" alt="Sala 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salas_de_epera/sala_espera8.jpeg')">
+                    <img src="images/salas_de_epera/sala_espera8.jpeg" alt="Sala 8">
+                </div>
+            </div>
+        </div>
+
+        <!-- Salud Integral -->
+        <div class="category">
+            <h2 class="category-title">Salud Integral</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral1.jpeg')">
+                    <img src="images/salud_integral/salud_integral1.jpeg" alt="Salud Integral 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral2.jpeg')">
+                    <img src="images/salud_integral/salud_integral2.jpeg" alt="Salud Integral 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral3.jpeg')">
+                    <img src="images/salud_integral/salud_integral3.jpeg" alt="Salud Integral 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral4.jpeg')">
+                    <img src="images/salud_integral/salud_integral4.jpeg" alt="Salud Integral 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral5.jpeg')">
+                    <img src="images/salud_integral/salud_integral5.jpeg" alt="Salud Integral 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral6.jpeg')">
+                    <img src="images/salud_integral/salud_integral6.jpeg" alt="Salud Integral 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral7.jpeg')">
+                    <img src="images/salud_integral/salud_integral7.jpeg" alt="Salud Integral 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral8.jpeg')">
+                    <img src="images/salud_integral/salud_integral8.jpeg" alt="Salud Integral 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/salud_integral/salud_integral9.jpeg')">
+                    <img src="images/salud_integral/salud_integral9.jpeg" alt="Salud Integral 9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Vida Plena -->
+        <div class="category">
+            <h2 class="category-title">Vida Plena</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena1.jpeg')">
+                    <img src="images/vida_plena/vida_plena1.jpeg" alt="Vida Plena 1">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena2.jpeg')">
+                    <img src="images/vida_plena/vida_plena2.jpeg" alt="Vida Plena 2">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena3.jpeg')">
+                    <img src="images/vida_plena/vida_plena3.jpeg" alt="Vida Plena 3">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena4.jpeg')">
+                    <img src="images/vida_plena/vida_plena4.jpeg" alt="Vida Plena 4">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena5.jpeg')">
+                    <img src="images/vida_plena/vida_plena5.jpeg" alt="Vida Plena 5">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena6.jpeg')">
+                    <img src="images/vida_plena/vida_plena6.jpeg" alt="Vida Plena 6">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena7.jpeg')">
+                    <img src="images/vida_plena/vida_plena7.jpeg" alt="Vida Plena 7">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena8.jpeg')">
+                    <img src="images/vida_plena/vida_plena8.jpeg" alt="Vida Plena 8">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena9.jpeg')">
+                    <img src="images/vida_plena/vida_plena9.jpeg" alt="Vida Plena 9">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena10.jpeg')">
+                    <img src="images/vida_plena/vida_plena10.jpeg" alt="Vida Plena 10">
+                </div>
+                <div class="gallery-item" onclick="openModal('images/vida_plena/vida_plena11.jpeg')">
+                    <img src="images/vida_plena/vida_plena11.jpeg" alt="Vida Plena 11">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ver imagen en grande -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo" aria-hidden="true">🦷</div>
+      <div>
+        <div class="footer-title">Programa de Salud Bucal — IPS</div>
+        <div class="footer-sub">Dpto. de Programas de Salud · Dirección de Medicina Preventiva</div>
+      </div>
+    </div>
+
+    <div class="footer-credits" role="contentinfo" aria-label="Créditos">
+      <p class="credit-line"><strong>Autora:</strong> Dra. Diana Rocio Orué</p>
+      <p class="credit-line"><strong>Diseño web:</strong> Lic. Julio Franco</p>
+      <p class="small-muted">© <span id="year-footer">2025</span> — Todos los derechos reservados</p>
+    </div>
+
+    <div class="footer-actions">
+      <a class="btn-materials" href="pdfs/Boca_sana_Corazon_sano.pdf" target="_blank" rel="noopener">Ver materiales</a>
+      <div class="footer-note">Comprometidos con tu salud bucal y bienestar integral</div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>Diseño accesible · Preferencias de impresión disponibles</small>
+  </div>
+</footer>
+    
+    <script>
+        // Create floating particles (solo si existe el contenedor)
+        const particlesContainer = document.getElementById('particles');
+        if (particlesContainer) {
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 60 + 20;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Resources data
+        const resources = [
+            {
+                name: "Boca Sana, CorazÃ³n Sano",
+                file: "pdfs/Boca_sana_Corazon_sano.pdf",
+                icon: "â¤ï¸",
+                category: "Salud General"
+            },
+            {
+                name: "Noviembre Azul: CÃ¡ncer de PrÃ³stata",
+                file: "pdfs/Post para Instagram Noviembre Azul Cancer de Prostata.pdf",
+                icon: "ðŸ’™",
+                category: "CampaÃ±as"
+            },
+            {
+                name: "Charla para Adultos Mayores",
+                file: "pdfs/charla adultos mayores.pdf",
+                icon: "ðŸ‘´",
+                category: "Adultos Mayores"
+            },
+            {
+                name: "Noviembre: Diabetes y Salud Bucal",
+                file: "pdfs/noviembre DIABETES.pdf",
+                icon: "ðŸ©º",
+                category: "Diabetes"
+            },
+            {
+                name: "Octubre Rosa: Tratamiento OncolÃ³gico",
+                file: "pdfs/octubre_rosa.pdf",
+                icon: "ðŸŽ—ï¸",
+                category: "OncologÃ­a"
+            },
+            {
+                name: "Diabetes IPS",
+                file: "pdfs/diabetes.pdf",
+                icon: "ðŸ“Š",
+                category: "InformaciÃ³n"
+            },
+            {
+                name: "PrevenciÃ³n en Adultos",
+                file: "pdfs/prevencion_adultos.pdf",
+                icon: "ðŸ›¡ï¸",
+                category: "PrevenciÃ³n"
+            },
+            {
+                name: "PrevenciÃ³n en NiÃ±os",
+                file: "pdfs/prevencion_ninhos.pdf",
+                icon: "ðŸ‘¦",
+                category: "PrevenciÃ³n Infantil"
+            },
+            {
+                name: "Salud Bucal en Embarazadas",
+                file: "pdfs/salud bucal en la embarazada.pdf",
+                icon: "ðŸ¤°",
+                category: "Embarazo"
+            },
+            {
+                name: "Lactancia Materna",
+                file: "pdfs/Lactancia materna.pdf",
+                icon: "ðŸ¼",
+                category: "Maternidad"
+            },
+            {
+                name: "Salud Bucodental: UbicaciÃ³n",
+                file: "pdfs/salud bucodental en adulto mayor-ubicacion.pdf",
+                icon: "ðŸ“",
+                category: "InformaciÃ³n"
+            },
+            {
+                name: "Salud Bucodental en Adultos Mayores",
+                file: "pdfs/Salud Bucodental en Adultos Mayores.pdf",
+                icon: "ðŸ‘µ",
+                category: "Adultos Mayores"
+            },
+            {
+                name: "TrÃ­ptico Odonto-Adulto Mcal. LÃ³pez",
+                file: "pdfs/triptico odontoadulto mcal lopez.pdf",
+                icon: "ðŸ“„",
+                category: "InformaciÃ³n Local"
+            },{
+                name: "CÃ¡ncer Oral: PrevenciÃ³n y Cuidado",
+                file: "pdfs/cancer_oral.pdf",
+                icon: "ðŸ‘„",
+                category: "OncologÃ­a"
+            },
+        ];
+
+        // Render resources
+        const resourcesGrid = document.getElementById('resourcesGrid');
+        resources.forEach((resource, index) => {
+            const card = document.createElement('div');
+            card.className = 'resource-card';
+            card.style.animation = `fadeIn 0.6s ease-out ${0.8 + index * 0.05}s both`;
+            
+            const fileName = resource.file.split('/').pop();
+            
+            card.innerHTML = `
+                <div class="resource-icon">
+                    ${resource.icon}
+                </div>
+                <div class="resource-info">
+                    <h4>${resource.name}</h4>
+                    <p>${resource.category}</p>
+                </div>
+                <a href="${resource.file}" target="_blank" class="download-btn" title="Descargar ${resource.name}">
+                    â¬‡ï¸
+                </a>
+            `;
+            
+            resourcesGrid.appendChild(card);
+        });
+
+        function openModal(imgSrc) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+
+            }
+        });
+
+        // FunciÃ³n para cargar imÃ¡genes dinÃ¡micamente por carpeta
+        function loadGalleryFolder(foldername, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            fetch(`images/${foldername}/`)
+                .then(res => res.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    // Busca links a imÃ¡genes (formato puede variar segÃºn servidor)
+                    const links = Array.from(doc.querySelectorAll('a')).filter(a => 
+                        /\.(jpg|jpeg|png|gif|webp)$/i.test(a.href)
+                    );
+                    
+                    if (links.length === 0) {
+                        container.innerHTML = '<p style="color:rgba(255,255,255,0.6);">No hay imÃ¡genes en esta carpeta</p>';
+                        return;
+                                       }
+
+                    links.forEach(link => {
+                        const filename = link.textContent.trim();
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        const imageSrc = encodeURI(`images/${foldername}/${filename}`);
+                        item.innerHTML = `<img src="${imageSrc}" alt="${filename}" onerror="this.parentElement.style.display='none'">`;
+                        item.onclick = () => openModal(imageSrc);
+                        container.appendChild(item);
+                    });
+                })
+                .catch(err => {
+                    console.warn(`No se pudo cargar carpeta ${foldername}:`, err);
+                    container.innerHTML = '<p style="color:rgba(255,255,255,0.6);">Error al cargar imÃ¡genes</p>';
+                });
+        }
+
+        // Cargar todas las nuevas carpetas
+        loadGalleryFolder('backup', 'backup-gallery');
+        loadGalleryFolder('capacitaciones_jornadas', 'capacitaciones-gallery');
+        loadGalleryFolder('maternidad', 'maternidad-gallery');
+        loadGalleryFolder('odontopediatria', 'odontopediatria-gallery');
+        loadGalleryFolder('pacientes_internados', 'pacientes-gallery');
+        loadGalleryFolder('previ_bus', 'previ-gallery');
+        loadGalleryFolder('salas_de_epera', 'salas-espera-gallery');
+        loadGalleryFolder('salud_integral', 'salud-integral-gallery');
+        loadGalleryFolder('vida_plena', 'vida-plena-gallery');
+    </script>
+</body>
+</html>
